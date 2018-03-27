@@ -9,6 +9,26 @@ celebrity::celebrity(std::string n, int b,  std::string a, bool m){
 	haveMet = m;
 }
 
+// Operator < Override
+bool celebrity::operator<(const celebrity& other){
+	if(this->howBad < other.howBad)
+		return true;
+	else if(this->howBad > other.howBad)
+		return false;
+	else if(this->howBad == other.howBad){
+		if(this->haveMet == true && other.haveMet == false)
+			return true;
+		else if(this->haveMet == false && other.haveMet == true)
+			return false;
+		else if(other.haveMet == this->haveMet){
+				if(this->name.compare(other.name) < 0)
+					return true;
+				else
+					return false;
+		}
+	}
+}
+
 // Get methods
 std::string celebrity::getName(){
 	return name;

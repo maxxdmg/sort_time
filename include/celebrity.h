@@ -21,5 +21,7 @@ class celebrity{
 		void setArea(std::string a);
 
 		celebrity(std::string n, int b, std::string a, bool m);		
+
+		bool operator<(const celebrity& other);
 };
 #endif
